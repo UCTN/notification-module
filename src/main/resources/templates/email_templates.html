@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<body style="font-family: Arial, sans-serif; font-size: 14px; color: #000000;">
+
+<h2 style="color:#2E86C1;">{{title}}</h2>
+<p>{{messageBody}}</p>
+<hr>
+
+<!-- İmza kısmı -->
+<table style="width:100%; margin-top: 10px;">
+    <tr>
+        <!-- Sol tarafta logo -->
+        <td style="width: 180px; vertical-align: top;">
+            <img src="https://pbs.twimg.com/profile_images/789140287360798722/UeB4w3Mv_400x400.jpg"
+                 alt="Teknopar Logo" style="width: 150px; height: auto;">
+        </td>
+
+        <!-- Aradaki dik çizgi -->
+        <td style="width: 1px; background-color: #CCCCCC;"></td>
+
+        <!-- Sağ tarafta kişi bilgileri ve firma iletişim bilgileri -->
+        <td style="padding-left: 15px; vertical-align: top; padding-top: 20px;">
+            <p style="margin: 0; font-weight: bold;">{{userName}}</p>
+            <p style="margin: 0;">{{userTitle}}</p>
+            <br>
+            <p style="margin: 0;"><strong>Teknopar</strong> Endüstriyel Otomasyon San. ve Tic. A.Ş.</p>
+            <p style="margin: 0;">İvedik Organize Sanayi Bölgesi 1471. Cad. No:3-5</p>
+            <p style="margin: 0;">06378 Yenimahalle / Ankara</p>
+            <br>
+
+            <!-- İki sütunlu iletişim bilgileri -->
+            <table style="width:100%; font-size: 14px;">
+                <tr>
+                    <td><strong>T:</strong> +90 312 395 99 07</td>
+                    <td><strong>F:</strong> +90 312 395 99 30</td>
+                </tr>
+                <tr>
+                    <td><strong>E:</strong> {{userEmail}}</td>
+                    <td><strong>W:</strong> <a href="https://www.teknopar.com.tr">www.teknopar.com.tr</a></td>
+                </tr>
+            </table>
+
+            <p style="margin-top: 10px; font-size: 12px; color: gray;">
+                Bu e-posta otomatik olarak gönderilmiştir.
+            </p>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <body style = "font-family: Arial, sans-serif;">
+    <h2 style = "font-size: 27px; color: #2E86C1;">{{title}}</h2>
+    <p style = "font-size: 18px; color: gray">{{body}}</p>
+    <hr>
+    <p style = "font-size: 12px; color: black;">Bu e-posta otomatik olarak gönderilmiştir.</p>
+    <img src = "https://pbs.twimg.com/profile_images/789140287360798722/UeB4w3Mv_400x400.jpg" alt = "Teknopar Logo" style = "width: 200px; height: 160px;">
+    </body>
+</html>-->
