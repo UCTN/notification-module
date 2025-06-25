@@ -23,18 +23,20 @@ public class EmailRequest {
     private String messageBody;
     private String title;
     private String body;
+    private String pdfFileName;
 
     private UserEmailRequest userEmailRequest;
 
 
     public EmailRequest(String mailContentType, String sendPdf, String mailAddress,
-                        String title, String messageBody, UserEmailRequest userEmailRequest) {
+                        String title, String messageBody, UserEmailRequest userEmailRequest, String pdfFileName) {
         this.mailContentType = mailContentType;
         this.sendPdf = sendPdf;
         this.mailAddress = mailAddress;
         this.title = title;
         this.messageBody = messageBody;
         this.userEmailRequest = userEmailRequest;
+        this.pdfFileName = pdfFileName;
     }
 }
 
