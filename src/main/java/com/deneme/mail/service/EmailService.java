@@ -132,7 +132,7 @@ public class EmailService extends AbstractService<Email>{
         }
         catch (Exception e) {
 
-            email.setMessageBody("Merhaba, bu bir deneme mailidir. Ancak gönderim sırasında bir hata oluştu.");
+            email.setMessageBody("Gönderim sırasında bir hata oluştu: "+ e.getMessage());
             email.setAttachment(null);
             email.setSentDate(LocalDateTime.now());
             email.setMailStatus(MailStatus.FAILED);
@@ -186,6 +186,11 @@ public class EmailService extends AbstractService<Email>{
     }
 
     public List<EmailResponse> getAllEmailsByMailStatus(String mailStatus) {
+
+        if (mailStatus.contains("i") || mailStatus.contains("I")) {
+            mailStatus = mailStatus.replace("i", "I");
+        }
+
         MailStatus status = MailStatus.valueOf(mailStatus.toUpperCase());
         List<Email> emails = emailRepository.findAllByMailStatus(status);
         return emails.stream()

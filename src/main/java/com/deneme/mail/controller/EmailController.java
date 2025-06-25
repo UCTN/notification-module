@@ -31,7 +31,7 @@ public class EmailController {
         return ResponseEntity.ok("Email sent successfully");
     }
 
-    @GetMapping("getAllEmails")
+    @GetMapping("get-all-emails")
     public ResponseEntity<List<EmailResponse>> getAllEmails() {
         return ResponseEntity.ok(emailService.getAllEmails());
     }
