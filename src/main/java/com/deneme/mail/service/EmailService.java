@@ -25,6 +25,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cglib.core.Local;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Service;
 
@@ -91,7 +92,14 @@ public class EmailService extends AbstractService<Email>{
                 messageBodyPart = new MimeBodyPart(); //sonra pdfi bodye ekliyoruz
                 DataSource source = new FileDataSource(emailRequest.getSendPdf());
                 messageBodyPart.setDataHandler(new DataHandler(source));
-                messageBodyPart.setFileName("deneme.pdf");
+
+                if (emailRequest.getPdfFileName() != null && !emailRequest.getPdfFileName().isEmpty()) {
+                    messageBodyPart.setFileName(emailRequest.getPdfFileName());
+                }
+                else{
+                    messageBodyPart.setFileName("ek" + LocalDateTime.now() + ".pdf");
+                }
+
                 multipart.addBodyPart(messageBodyPart);
 
                 notification.setContent(multipart); // son olarak mail içeriğini multipart olarak ayarlıyoruz
